@@ -27,12 +27,12 @@
 				{
 					var button = document.getElementById("fullscreen");
 					button.style.visibility = "visible";
-
+					console.log("loading");
 					// Check if VR is available
 					if(app.vrAvailable())
 					{
 						console.log("VR MODE");
-						button = document.getElementById("vr");
+												button = document.getElementById("vr");
 						button.style.visibility = "visible";
 					}
 
@@ -40,7 +40,7 @@
 					if(app.arAvailable())
 					{
 						console.log("AR MODE");
-						button = document.getElementById("ar");
+									button = document.getElementById("ar");
 						button.style.visibility = "visible";
 					}
 
