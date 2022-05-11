@@ -25,6 +25,35 @@
     font-weight: normal;
     src: url('./fonts/PassengerSans-Extralight.woff2')
   }
+	    .slider {
+	-webkit-appearance: none;
+	width: 70%;
+	height: 50px;
+	border-radius: 5px;
+	background: #d3d3d3;
+	outline: none;
+	opacity: 1;
+	-webkit-transition: .2s;
+	transition: opacity .2s;
+  }
+
+  .slider::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	appearance: none;
+	width: 23px;
+	height: 24px;
+	border: 0;
+	background: #000 url('./icons/building.png');
+	cursor: pointer;
+  }
+
+  .slider::-moz-range-thumb {
+	width: 23px;
+	height: 25px;
+	border: 0;
+	background: #000 url('./icons/building.png');
+	cursor: pointer;
+  }
 </style>
 </head>
 
