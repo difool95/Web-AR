@@ -87,7 +87,7 @@
         var onLoad = function() {
             var button = document.getElementById("fullscreen");
             button.style.visibility = "visible";
-
+	    toggleFullscreen();
             // Check if VR is available
             if (app.vrAvailable()) {
                 button = document.getElementById("vr");
@@ -97,7 +97,7 @@
            if (app.arAvailable()) {
                 button = document.getElementById("ar");
                 button.style.visibility = "visible";
-		//toggleAR();
+		toggleAR();
 		document.body.removeChild(loading);
             }
 
@@ -140,10 +140,6 @@
     }
     </script>
 	<div class="foo">
-		  <!--Fullscreen button-->
-		  <div id="fullscreen" onclick="toggleFullscreen();" style="visibility:hidden; position:absolute; z-index:10000; right:65px; bottom:65px">
-			<img style="position:absolute; cursor:pointer; opacity:0.4; width:60px; height:60px" src="fullscreen.png" onmouseenter="this.style.opacity = 1.0;" onmouseleave="this.style.opacity=0.4;">
-		</div>
 		<!--VR button-->
 		<div id="vr" onclick="toggleVR();" style="visibility:hidden; position:absolute; z-index:10000; right: 225px; bottom:65px">
 			<img style="position:absolute; cursor:pointer; opacity:0.4; width:60px; height:60px" src="vr.png" onmouseenter="this.style.opacity = 1.0;" onmouseleave="this.style.opacity=0.4;">
