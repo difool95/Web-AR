@@ -82,6 +82,8 @@
 
         // Onload enable the vr and fullscreen buttons
         var loading = document.getElementById("loading2");
+	    	var errorMessage = document.getElementById("Error");
+		errorMessage.style.display = "none";
         var onLoad = function() {
             var button = document.getElementById("fullscreen");
             button.style.visibility = "visible";
@@ -92,15 +94,18 @@
                 button.style.visibility = "visible";
             }
 
-            // Check if AR is available
-            if (app.arAvailable()) {
+           if (app.arAvailable()) {
                 button = document.getElementById("ar");
                 button.style.visibility = "visible";
+		//toggleAR();
+		document.body.removeChild(loading);
             }
 
-            // Remove logo and loading bar
-            document.body.removeChild(loading);
-		toggleAR();
+		else
+		{
+			errorMessage.style.display = "inline";
+		}
+
         };
 
         // On progress callback
@@ -150,6 +155,9 @@
 	 </div>
 		<div id="loading2">
 			<img id="loading-image" style="position:absolute; width:50%; left:25%;" src = "Loading.gif" alt="Loading..." />
+		</div>
+	<div id="Error">
+			<b>Your device does not support AR, if you are using IOS device install XRViewer Browser, for android install Google ARCore</b>
 		</div>
 
 </body>
