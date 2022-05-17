@@ -95,7 +95,7 @@
             }
 
            if (app.arAvailable()) {
-                button = document.getElementById("ar");
+                button = document.getElementById("ArMode");
                 button.style.visibility = "visible";
 		//toggleAR();
 		//document.body.removeChild(loading);
@@ -145,7 +145,7 @@
 			<img style="position:absolute; cursor:pointer; opacity:0.4; width:60px; height:60px" src="vr.png" onmouseenter="this.style.opacity = 1.0;" onmouseleave="this.style.opacity=0.4;">
 		</div>
 		<!--AR button-->
-		<div id="ar" onclick="toggleAR();" style="visibility:hidden; position:absolute; z-index:10000; right: 145px; bottom:65px">
+		<div id="ArMode" onclick="toggleAR();" style="visibility:hidden; position:absolute; z-index:10000; right: 145px; bottom:65px">
 			<img style="position:absolute; cursor:pointer; opacity:0.4; width:60px; height:60px" src="ar.png" onmouseenter="this.style.opacity = 1.0;" onmouseleave="this.style.opacity=0.4;">
 		</div>
 	 </div>
