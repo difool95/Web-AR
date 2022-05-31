@@ -98,9 +98,8 @@
             if (app.arAvailable()) {
                 button = document.getElementById("ArMode");
                 button.style.visibility = "visible";
-		toggleAR();
+		toggleAR(rightDiv);
 		document.body.removeChild(loading);
-		rightDiv.style.visibility = "visible";
             }
         };
 
@@ -131,8 +130,9 @@
     }
 
     // Toggle AR mode
-    function toggleAR() {
+    function toggleAR(rightDiv) {
         app.toggleAR();
+	rightDiv.style.visibility = "visible";
     }
     </script>
 	<div class="foo">
