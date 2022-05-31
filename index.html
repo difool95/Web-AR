@@ -85,8 +85,8 @@
 
         // Onload enable the vr and fullscreen buttons
         var loading = document.getElementById("loading2");
-		slider = document.getElementById("volume");
-		rightDiv = document.getElementById("rightDiv");
+	slider = document.getElementById("volume");
+	rightDiv = document.getElementById("rightDiv");
         var onLoad = function() {
             // Check if VR is available
             if (app.vrAvailable()) {
@@ -98,10 +98,9 @@
             if (app.arAvailable()) {
                 button = document.getElementById("ArMode");
                 button.style.visibility = "visible";
-				toggleAR();
-				rightDiv.style.display = "inline";
-	  	  		slider.style.display = "inline";
-				document.body.removeChild(loading);
+		toggleAR();
+		document.body.removeChild(loading);
+		rightDiv.style.visibility = "visible";
             }
         };
 
