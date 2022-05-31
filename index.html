@@ -88,10 +88,8 @@
 
         // Onload enable the vr and fullscreen buttons
         var loading = document.getElementById("loading2");
-		var errorMessage = document.getElementById("Error");
 		slider = document.getElementById("volume");
 		rightDiv = document.getElementById("rightDiv");
-		errorMessage.style.display = "none";
         var onLoad = function() {
             // Check if VR is available
             if (app.vrAvailable()) {
@@ -108,11 +106,6 @@
 	  	  		slider.style.display = "inline";
 				document.body.removeChild(loading);
             }
-
-			else
-			{
-				errorMessage.style.display = "inline";
-			}
         };
 
         // On progress callback
@@ -162,9 +155,6 @@
 	 </div>
 		<div id="loading2">
 			<img id="loading-image" style="position:absolute; width:50%; left:25%;" src = "../../../files/Loading.gif" alt="Loading..." />
-		</div>
-		<div id="Error">
-			<b>Your device does not support AR, if you are using IOS device install XRViewer Browser, for android install Google ARCore</b>
 		</div>
 
 </body>
