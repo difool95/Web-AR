@@ -5,25 +5,25 @@
     <title>Maginat</title>
     <meta charset="UTF-8">
     <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1" />
-	<link rel="shortcut icon" type="image/png" href="../../../files/Nav.png">
+	<link rel="shortcut icon" type="image/png" href="./Nav.png">
 	<style>
 		@font-face {
     font-family: 'PassengerSans';
     font-style: normal;
     font-weight: normal;
-    src: url('../../../files/font/PassengerSans-Light.woff2')
+    src: url('./fonts/PassengerSans-Light.woff2')
   }
 @font-face {
     font-family: 'PassengerSans_bold';
     font-style: bold;
     font-weight: bold;
-    src: url('../../../files/font/PassengerSans-Bold.woff2')
+    src: url('./fonts/PassengerSans-Bold.woff2')
   }
   @font-face {
     font-family: 'PassengerSans_light';
     font-style: normal;
     font-weight: normal;
-    src: url('../../../files/font/PassengerSans-Extralight.woff2')
+    src: url('./fonts/PassengerSans-Extralight.woff2')
   }
  .slider {
 	-webkit-appearance: none;
@@ -44,7 +44,7 @@
 	width: 80px;
 	height: 150px;
 	border: 0;
-	background-image:  url('../../../files/icons/tiles.png');
+	background-image:  url('./icons/tiles.png');
   background-size: contain;
   background-position: center center;
   background-repeat: no-repeat;
@@ -55,22 +55,19 @@
 	width:80px;
 	height: 150px;
 	border: 0;
-	background-image: url('../../../files/icons/tiles.png');
+	background-image: url('./icons/tiles.png');
   background-size: contain;
   background-position: center center;
   background-repeat: no-repeat;
 	cursor: pointer;
   }
   p { margin:0 }
-  .startImg {
-	content: url("'../files/icons/store/round-play-button.png");
-  }
 </style>
 </head>
 
 <body style="background-color: #ffffff" onload="run();" onresize="resize();" oncontextmenu="return false;">
     <!--maginator lib-->
-    <script type="text/javascript" src="../../../files/maginat/nunu.min.js"></script>
+    <script type="text/javascript" src="./nunu.min.js"></script>
     <!--App code-->
     <script type="text/javascript">
     let url_str = window.location.href;
@@ -116,7 +113,7 @@
                 bar.style.width = progress + "%";
             }
         };
-		app.loadRunProgram("../../../files/maginat/nsp/"+id_maginat + ".nsp", onLoad, onProgress);
+		app.loadRunProgram("./file.nsp", onLoad, onProgress);
     }
 
     // Resize app (must be called every time the window is resized)
@@ -142,19 +139,19 @@
 	<div class="foo">
 		  <!--Fullscreen button-->
 		  <!--<div id="fullscreen" onclick="toggleFullscreen();" style="visibility:hidden; position:absolute; z-index:10000; right:65px; bottom:65px">
-			<img style="position:absolute; cursor:pointer; opacity:0.4; width:60px; height:60px" src="../../../files/maginat/fullscreen.png" onmouseenter="this.style.opacity = 1.0;" onmouseleave="this.style.opacity=0.4;">
+			<img style="position:absolute; cursor:pointer; opacity:0.4; width:60px; height:60px" src="./fullscreen.png" onmouseenter="this.style.opacity = 1.0;" onmouseleave="this.style.opacity=0.4;">
 		</div>-->
 		<!--VR button-->
 		<div id="vr" onclick="toggleVR();" style="visibility:hidden; position:absolute; z-index:10000; right: 225px; bottom:65px">
-			<img style="position:absolute; cursor:pointer; opacity:0.4; width:60px; height:60px" src="../../../files/maginat/vr.png" onmouseenter="this.style.opacity = 1.0;" onmouseleave="this.style.opacity=0.4;">
+			<img style="position:absolute; cursor:pointer; opacity:0.4; width:60px; height:60px" src="./vr.png" onmouseenter="this.style.opacity = 1.0;" onmouseleave="this.style.opacity=0.4;">
 		</div>
 		<!--AR button-->
 		<div id="ArMode" onclick="toggleAR();" style="visibility:hidden; position:absolute; z-index:10000; right: 145px; bottom:65px">
-			<img style="position:absolute; cursor:pointer; opacity:0.4; width:60px; height:60px" src="../../../files/maginat/ar.png" onmouseenter="this.style.opacity = 1.0;" onmouseleave="this.style.opacity=0.4;">
+			<img style="position:absolute; cursor:pointer; opacity:0.4; width:60px; height:60px" src="./ar.png" onmouseenter="this.style.opacity = 1.0;" onmouseleave="this.style.opacity=0.4;">
 		</div>
 	 </div>
 		<div id="loading2">
-			<img id="loading-image" style="position:absolute; width:50%; left:25%;" src = "../../../files/Loading.gif" alt="Loading..." />
+			<img id="loading-image" style="position:absolute; width:50%; left:25%;" src = "./Loading.gif" alt="Loading..." />
 		</div>
 
 </body>
