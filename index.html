@@ -75,7 +75,8 @@
     let search_params = url.searchParams;
     var id_maginat=search_params.get('id');
     var app;
-
+var slider;
+	var rightDiv;
     // Initialize app
     function run() {
         // Create app object
@@ -83,6 +84,8 @@
 
         // Onload enable the vr and fullscreen buttons
         var loading = document.getElementById("loading2");
+	    slider = document.getElementById("volume");
+	rightDiv = document.getElementById("rightDiv");
         var onLoad = function() {
             // Check if VR is available
             if (app.vrAvailable()) {
@@ -94,7 +97,8 @@
             if (app.arAvailable()) {
                 button = document.getElementById("ArMode");
                 button.style.visibility = "visible";
-		toggleAR();
+				toggleAR(rightDiv);
+
 		document.body.removeChild(loading);
             }
         };
@@ -126,8 +130,10 @@
     }
 
     // Toggle AR mode
-    function toggleAR() {
+    function toggleAR(rightDiv) {
         app.toggleAR();
+	rightDiv.style.visibility = "visible";
+
     }
     </script>
 	<div class="foo">
