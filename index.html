@@ -133,8 +133,11 @@
             if (app.arAvailable()) {
                 button = document.getElementById("ArMode");
                 button.style.visibility = "visible";
-		toggleFullscreen();
+		//toggleFullscreen();
 		toggleAR();
+	        var resizeEvent = window.document.createEvent('UIEvents'); 
+		resizeEvent.initUIEvent('resize', true, false, window, 0); 
+		window.dispatchEvent(resizeEvent);
 		document.body.removeChild(loading);
             }
         };
