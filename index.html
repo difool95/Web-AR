@@ -133,9 +133,9 @@
             if (app.arAvailable()) {
                 button = document.getElementById("ArMode");
                 button.style.visibility = "visible";
-		//toggleAR();
-		resize();
+		toggleAR();
 		document.body.removeChild(loading);
+		app.resize();
             }
         };
 
