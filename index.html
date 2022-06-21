@@ -130,7 +130,9 @@
                 button.style.visibility = "visible";
             }
 
-            // Check if AR is available
+           
+        };
+	 // Check if AR is available
             if (app.arAvailable()) {
                 button = document.getElementById("ArMode");
                 button.style.visibility = "visible";
@@ -141,8 +143,6 @@
 		//window.dispatchEvent(resizeEvent);
 		document.body.removeChild(loading);
             }
-        };
-
         // On progress callback
         var bar = document.getElementById("bar");
         var onProgress = function(event) {
