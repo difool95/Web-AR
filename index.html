@@ -120,6 +120,7 @@
     function run() {
         // Create app object
         app = new Nunu.App();
+	    console.log("running");
         // Onload enable the vr and fullscreen buttons
         var loading = document.getElementById("loading2");
         var onLoad = function() {
@@ -135,7 +136,6 @@
                 button.style.visibility = "visible";
 		//toggleFullscreen();
 		//toggleAR();
-		    console.log("ar available");
 	        //var resizeEvent = window.document.createEvent('UIEvents'); 
 		//resizeEvent.initUIEvent('resize', true, false, window, 0); 
 		//window.dispatchEvent(resizeEvent);
