@@ -128,10 +128,7 @@
                 button = document.getElementById("vr");
                 button.style.visibility = "visible";
             }
-	console.log("load");
-	 // Check if AR is available
-            if (app.arAvailable()) {
-                button = document.getElementById("ArMode");
+	button = document.getElementById("ArMode");
                 button.style.visibility = "visible";
 		//toggleFullscreen();
 		//toggleAR();
@@ -139,6 +136,9 @@
 		//resizeEvent.initUIEvent('resize', true, false, window, 0); 
 		//window.dispatchEvent(resizeEvent);
 		document.body.removeChild(loading);
+	 // Check if AR is available
+            if (app.arAvailable()) {
+                
             }
         };
 	
