@@ -120,7 +120,6 @@
     function run() {
         // Create app object
         app = new Nunu.App();
-	    console.log("running");
         // Onload enable the vr and fullscreen buttons
         var loading = document.getElementById("loading2");
         var onLoad = function() {
@@ -129,9 +128,7 @@
                 button = document.getElementById("vr");
                 button.style.visibility = "visible";
             }
-
-           
-        };
+	console.log("load");
 	 // Check if AR is available
             if (app.arAvailable()) {
                 button = document.getElementById("ArMode");
@@ -143,6 +140,8 @@
 		//window.dispatchEvent(resizeEvent);
 		document.body.removeChild(loading);
             }
+        };
+	
         // On progress callback
         var bar = document.getElementById("bar");
         var onProgress = function(event) {
