@@ -103,6 +103,16 @@
 	margin-left: auto;
 	margin-right: auto;
 	}
+	/* By default, hide the DOM Overlay element. */
+#overlay {
+  display: none;
+}
+/* Show the DOM Overlay element while active */
+/* The overlay element has the :xr-overlay pseudoclass while active, 
+      and we use this in CSS rules to show/hide UI. */
+#overlay:xr-overlay {
+  display: initial;
+}
 </style>
 </head>
 
