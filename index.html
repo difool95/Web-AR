@@ -113,6 +113,56 @@
 #overlay:xr-overlay {
   display: initial;
 }
+ #exit-ar {
+  position: absolute;
+  right: 40px;
+  bottom: 40px;
+  background: rgba(127, 127, 127, 0.25);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 6px 8px;
+  font-weight: bold;
+}
+#prev {
+  position: absolute;
+  left: 10px;
+  bottom: 40px;
+  background: rgba(127, 127, 127, 0.25);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 6px 8px;
+  font-weight: bold;
+}
+#play {
+  position: absolute;
+  left: 50px;
+  bottom: 40px;
+  background: rgba(127, 127, 127, 0.25);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 6px 8px;
+  font-weight: bold;
+}
+#pause {
+  position: absolute;
+  left: 90px;
+  bottom: 40px;
+  background: rgba(127, 127, 127, 0.25);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 6px 8px;
+  font-weight: bold;
+}
+#next {
+  position: absolute;
+  left: 130px;
+  bottom: 40px;
+  background: rgba(127, 127, 127, 0.25);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 6px 8px;
+  font-weight: bold;
+}
 </style>
 </head>
 
@@ -199,6 +249,14 @@
 		<div id="loading2">
 			<img id="loading-image" style="position:absolute; width:50%; left:25%;" src = "./Loading.gif" alt="Loading..." />
 		</div>
+	
+	  <div id="overlay">
+      <button id="exit-ar">Exit AR</button>
+      <button id="prev">&lt&lt</button>
+      <button id="play">I&gt</button>
+      <button id="pause">||</button>
+      <button id="next">&gt&gt</button>
+    </div>
 
 </body>
 
