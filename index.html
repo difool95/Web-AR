@@ -103,66 +103,6 @@
 	margin-left: auto;
 	margin-right: auto;
 	}
-	/* By default, hide the DOM Overlay element. */
-#overlay {
-  display: none;
-}
-/* Show the DOM Overlay element while active */
-/* The overlay element has the :xr-overlay pseudoclass while active, 
-      and we use this in CSS rules to show/hide UI. */
-#overlay:xr-overlay {
-  display: initial;
-}
- #exit-ar {
-  position: absolute;
-  right: 40px;
-  bottom: 40px;
-  background: rgba(127, 127, 127, 0.25);
-  color: white;
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  padding: 6px 8px;
-  font-weight: bold;
-}
-#prev {
-  position: absolute;
-  left: 10px;
-  bottom: 40px;
-  background: rgba(127, 127, 127, 0.25);
-  color: white;
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  padding: 6px 8px;
-  font-weight: bold;
-}
-#play {
-  position: absolute;
-  left: 50px;
-  bottom: 40px;
-  background: rgba(127, 127, 127, 0.25);
-  color: white;
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  padding: 6px 8px;
-  font-weight: bold;
-}
-#pause {
-  position: absolute;
-  left: 90px;
-  bottom: 40px;
-  background: rgba(127, 127, 127, 0.25);
-  color: white;
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  padding: 6px 8px;
-  font-weight: bold;
-}
-#next {
-  position: absolute;
-  left: 130px;
-  bottom: 40px;
-  background: rgba(127, 127, 127, 0.25);
-  color: white;
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  padding: 6px 8px;
-  font-weight: bold;
-}
 </style>
 </head>
 
@@ -232,13 +172,6 @@
         app.toggleAR();
     }
     </script>
-	 <div id="overlay">
-      <button id="exit-ar">Exit AR</button>
-      <button id="prev">&lt&lt</button>
-      <button id="play">I&gt</button>
-      <button id="pause">||</button>
-      <button id="next">&gt&gt</button>
-    </div>
 	<div id="ArMode" onclick="toggleAR();" style="visibility:hidden; position:absolute; z-index:10000; right: 145px; bottom:65px">
 			<img style="position:absolute; cursor:pointer; opacity:0.4; width:60px; height:60px" src="./ar.png" onmouseenter="this.style.opacity = 1.0;" onmouseleave="this.style.opacity=0.4;">
 		</div>
