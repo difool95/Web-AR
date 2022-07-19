@@ -4,7 +4,6 @@
 <head>
     <title>Maginat</title>
     <meta charset="UTF-8">
-	<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1" />
 	<link rel="shortcut icon" type="image/png" href="./Nav.png">
 	<style>
 		@font-face {
@@ -86,6 +85,19 @@
     <script type="text/javascript" src="./nunu.min.js"></script>
     <!--App code-->
     <script type="text/javascript">
+    if(iOS()){
+			var meta = document.createElement('meta');
+			meta.httpEquiv = "content-type";
+			meta.content = "text/html; charset=ISO-8859-1";
+			document.head.appendChild(meta);
+		}
+		else{
+			var meta = document.createElement('meta');
+			meta.name = "viewport";
+			meta.content = "width=device-width, user-scalable=no";
+			document.head.appendChild(meta);
+		}
+	    
     let url_str = window.location.href;
     let url = new URL(url_str);
     let search_params = url.searchParams;
@@ -105,10 +117,6 @@
             }
 	button = document.getElementById("ArMode");
                 button.style.visibility = "visible";
-		//toggleFullscreen();
-	        //var resizeEvent = window.document.createEvent('UIEvents'); 
-		//resizeEvent.initUIEvent('resize', true, false, window, 0); 
-		//window.dispatchEvent(resizeEvent);
 		document.body.removeChild(loading);
 	 // Check if AR is available
             if (app.arAvailable()) {
@@ -146,6 +154,18 @@
     function toggleAR() {
         app.toggleAR();
     }
+function iOS() {
+  return [
+    'iPad Simulator',
+    'iPhone Simulator',
+    'iPod Simulator',
+    'iPad',
+    'iPhone',
+    'iPod'
+  ].includes(navigator.platform)
+  // iPad on iOS 13 detection
+  || (navigator.userAgent.includes("Mac") && "ontouchend" in document)
+ }	                
     </script>
 	<div id="ArMode" onclick="toggleAR();" style="visibility:hidden; position:absolute; z-index:10000; right: 145px; bottom:65px">
 			<img style="position:absolute; cursor:pointer; opacity:0.4; width:60px; height:60px" src="./ar.png" onmouseenter="this.style.opacity = 1.0;" onmouseleave="this.style.opacity=0.4;">
