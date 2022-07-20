@@ -5,7 +5,7 @@
     <title>Maginat</title>
     <meta charset="UTF-8">
 	<!--<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">-->
-	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<!--<meta name="viewport" content="width=device-width, user-scalable=no">-->
 	<link rel="shortcut icon" type="image/png" href="./Nav.png">
 	<style>
 		@font-face {
@@ -37,10 +37,7 @@
 	transition: opacity .2s;
   }
   
-  p { margin:0 }
-  body {
-	touch-action: none;
-  }		
+  p { margin:0 }		
 .tutoTransform{
 	content:url('./icons/TRANSFORM.gif');
 	background-size: contain;
@@ -89,16 +86,16 @@
     <script type="text/javascript">   
 	    
 	    if(iOS()){
-	    		/*var meta = document.createElement('meta');
-			meta.httpEquiv = "content-type";
-			meta.content = "text/html; charset=ISO-8859-1";
-			document.head.appendChild(meta);*/	
+	    		var meta1 = document.createElement('meta');
+			meta1.httpEquiv = "content-type";
+			meta1.content = "text/html; charset=ISO-8859-1";
+			document.head.appendChild(meta1);	
 		}
 		else{
-			/*var meta = document.createElement('meta');
-			meta.name = "viewport";
-			meta.content = "width=device-width, initial-scale=1.0";
-			document.head.appendChild(meta);*/
+			var meta2 = document.createElement('meta');
+			meta2.name = "viewport";
+			meta2.content = "width=device-width, user-scalable=no";
+			document.head.appendChild(meta2);
 		}
     let url_str = window.location.href;
     let url = new URL(url_str);
