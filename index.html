@@ -4,7 +4,7 @@
 <head>
     <title>Maginat</title>
     <meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
 	<link rel="shortcut icon" type="image/png" href="./Nav.png">
 	<style>
 		@font-face {
@@ -86,7 +86,7 @@
     <!--App code-->
     <script type="text/javascript">   
 	    
-	   /* if(iOS()){
+	    if(iOS()){
 	    		var meta1 = document.createElement('meta');
 			meta1.httpEquiv = "content-type";
 			meta1.content = "text/html; charset=ISO-8859-1";
@@ -97,7 +97,7 @@
 			meta2.name = "viewport";
 			meta2.content = "width=device-width, user-scalable=no";
 			document.head.appendChild(meta2);
-		}*/
+		}
     let url_str = window.location.href;
     let url = new URL(url_str);
     let search_params = url.searchParams;
