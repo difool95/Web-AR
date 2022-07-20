@@ -79,8 +79,15 @@
 	margin-right: auto;
 	}
 </style>
-	<script type="text/javascript">
-		    if(iOS()){
+</head>
+
+<body style="background-color: #ffffff" onload="run();" onresize="resize();" oncontextmenu="return false;">
+    <!--maginator lib-->
+    <script type="text/javascript" src="./nunu.min.js"></script>
+    <!--App code-->
+    <script type="text/javascript">   
+	    
+	    if(iOS()){
 	    		/*var meta = document.createElement('meta');
 			meta.httpEquiv = "content-type";
 			meta.content = "text/html; charset=ISO-8859-1";
@@ -92,14 +99,6 @@
 			meta.content = "width=device-width, user-scalable=no";
 			document.head.appendChild(meta);
 		}
-	</script>
-</head>
-
-<body style="background-color: #ffffff" onload="run();" onresize="resize();" oncontextmenu="return false;">
-    <!--maginator lib-->
-    <script type="text/javascript" src="./nunu.min.js"></script>
-    <!--App code-->
-    <script type="text/javascript">   
     let url_str = window.location.href;
     let url = new URL(url_str);
     let search_params = url.searchParams;
