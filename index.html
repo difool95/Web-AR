@@ -110,6 +110,9 @@
         // Onload enable the vr and fullscreen buttons
         var loading = document.getElementById("loading2");
         var onLoad = function() {
+		var container;
+		container = scene.getObjectByName("Container");
+		console.log(container);
 		//toggleFullscreen();
             // Check if VR is available
           /*  if (app.vrAvailable()) {
