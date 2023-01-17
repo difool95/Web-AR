@@ -79,7 +79,8 @@
 	}
 </style>
 </head>
-
+<script src="https://cdn.jsdelivr.net/npm/aframe@1.0.4/dist/aframe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/ar.js@2.0.8/aframe/build/aframe-ar.min.js"></script>
 <body style="background-color: #ffffff" onload="run();" onresize="resize();" oncontextmenu="return false;">
     <!--maginator lib-->
     <script type="text/javascript" src="./nunu.min.js"></script>
@@ -111,7 +112,6 @@
         // Onload enable the vr and fullscreen buttons
         var loading = document.getElementById("loading2");
         var onLoad = function() {
-		console.log("hey");
 		container = app.getContainer();
 		console.log(container);
 		toggleFullscreen();
@@ -173,15 +173,20 @@ function iOS() {
   || (navigator.userAgent.includes("Mac") && "ontouchend" in document)
  }	                
     </script>
-	<div id="ArMode" onclick="toggleAR();" style="visibility:visible; position:absolute; z-index:10000; right: 145px; bottom:65px">
+	<!--<div id="ArMode" onclick="toggleAR();" style="visibility:visible; position:absolute; z-index:10000; right: 145px; bottom:65px">
 			<img style="position:absolute; cursor:pointer; opacity:0.4; width:60px; height:60px" src="./ar.png" onmouseenter="this.style.opacity = 1.0;" onmouseleave="this.style.opacity=0.4;">
 		</div>
 		<div id="loading2">
 			<img id="loading-image" style="position:absolute; width:50%; left:25%;" src = "./Loading.gif" alt="Loading..." />
-		</div>
-	
-	 
-
+		</div>-->
+	<div id="loading2"><img id="loading-image" style="position:absolute; width:50%; left:25%;" src = "./Loading.gif" alt="Loading..." />
+		
+	<a-scene embedded arjs>
+ 	<a-marker preset="hiro">
+      	<a-box position='0 0.5 0' material='color: yellow;'></a-box>
+    	</a-marker>
+    	<a-entity camera></a-entity>
+  	</a-scene>
 </body>
 
 </html>
