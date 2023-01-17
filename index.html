@@ -103,6 +103,7 @@
     let search_params = url.searchParams;
     var id_maginat=search_params.get('id');
     var app;
+    var container;
     // Initialize app
     function run() {
         // Create app object
@@ -110,11 +111,10 @@
         // Onload enable the vr and fullscreen buttons
         var loading = document.getElementById("loading2");
         var onLoad = function() {
-		var container;
 		console.log("hey");
-		container = scene.getObjectByName("Container");
+		container = app.getContainer();
 		console.log(container);
-		//toggleFullscreen();
+		toggleFullscreen();
             // Check if VR is available
           /*  if (app.vrAvailable()) {
                 button = document.getElementById("vr");
