@@ -114,20 +114,20 @@
         var onLoad = function() {
 		container = app.getContainer();
 		console.log(container);
-		toggleFullscreen();
+		//toggleFullscreen();
             // Check if VR is available
           /*  if (app.vrAvailable()) {
                 button = document.getElementById("vr");
                 button.style.visibility = "visible";
-            }
+            }*/
 	
-	 // Check if AR is available
+	  Check if AR is available
             if (app.arAvailable()) {
 		button = document.getElementById("ArMode");
                 button.style.visibility = "visible";
 		document.body.removeChild(loading);
                 toggleAR();
-            }*/
+            }
         };
 	
         // On progress callback
