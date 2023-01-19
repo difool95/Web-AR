@@ -2,195 +2,22 @@
 <html>
 
 <head>
-    <title>Maginat</title>
-    <meta charset="UTF-8">
-	<!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
-	<link rel="shortcut icon" type="image/png" href="./Nav.png">
-	<style>
-		@font-face {
-    font-family: 'PassengerSans';
-    font-style: normal;
-    font-weight: normal;
-    src: url('./fonts/PassengerSans-Light.woff2')
-  }
-@font-face {
-    font-family: 'PassengerSans_bold';
-    font-style: bold;
-    font-weight: bold;
-    src: url('./fonts/PassengerSans-Bold.woff2')
-  }
-  @font-face {
-    font-family: 'PassengerSans_light';
-    font-style: normal;
-    font-weight: normal;
-    src: url('./fonts/PassengerSans-Extralight.woff2')
-  }
- .slider {
-	-webkit-appearance: none;
-	height: 75px;
-	border-radius: 20px;
-	background: #d3d3d3;
-	outline: none;
-	opacity: 0.7;
-	-webkit-transition: .2s;
-	transition: opacity .2s;
-  }
-  body {
-	touch-action: none;
-}
-  p { margin:0 }		
-.tutoTransform{
-	content:url('./icons/TRANSFORM.gif');
-	background-size: contain;
-  	background-position: center center;
-  	background-repeat: no-repeat;
-	  display: block;
-	margin-left: auto;
-	margin-right: auto;
-  }
-
-  .tutoScale{
-	content:url('./icons/SCALE.gif');
-	background-size: contain;
-	background-position: center center;
-	background-repeat: no-repeat;
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-	}
-
-  .tutoTransformOkay{
-	width: 10%;
-	height: 10%;
-	content:url('./icons/tick.png');
-	background-size: contain;
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-  }
-  .resetImage{
-	content:url('./icons/Exit_buttons.png');
-	background-size: contain;
-	background-position: center center;
-	background-repeat: no-repeat;
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-	}
-</style>
+<title>Maginat</title>
+<meta charset="UTF-8">
+<!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<link rel="shortcut icon" type="image/png" href="./Nav.png">
 </head>
 <script src="https://cdn.jsdelivr.net/npm/aframe@1.0.4/dist/aframe.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/ar.js@2.0.8/aframe/build/aframe-ar.min.js"></script>
 <body style="background-color: #ffffff" onload="run();" oncontextmenu="return false;">
-    <!--maginator lib-->
-    <script type="text/javascript" src="./nunu.min.js"></script>
-    <!--App code-->
-    <script type="text/javascript">   
-	    
-	    if(iOS()){
-	    		var meta1 = document.createElement('meta');
-			meta1.httpEquiv = "content-type";
-			meta1.content = "text/html; charset=ISO-8859-1";
-			document.head.appendChild(meta1);	
-		}
-		else{
-			var meta2 = document.createElement('meta');
-			meta2.name = "viewport";
-			meta2.content = "width=device-width, user-scalable=no";
-			document.head.appendChild(meta2);
-		}
-    let url_str = window.location.href;
-    let url = new URL(url_str);
-    let search_params = url.searchParams;
-    var id_maginat=search_params.get('id');
-    var app;
-    var container;
-    // Initialize app
-    function run() {
-        // Create app object
-        app = new Nunu.App();
-        // Onload enable the vr and fullscreen buttons
-        var loading = document.getElementById("loading2");
-        var onLoad = function() {
-		container = app.getContainer();
-		console.log(container);
-		//toggleFullscreen();
-            // Check if VR is available
-          /*  if (app.vrAvailable()) {
-                button = document.getElementById("vr");
-                button.style.visibility = "visible";
-            }*/
-	
-	  //Check if AR is available
-            if (app.arAvailable()) {
-		button = document.getElementById("ArMode");
-                button.style.visibility = "visible";
-		document.body.removeChild(loading);
-                //toggleAR();
-		toggleMarkerbasedAR();
-            }
-        };
-	
-        // On progress callback
-        var bar = document.getElementById("bar");
-        var onProgress = function(event) {
-            if (event.lengthComputable) {
-                var progress = event.loaded / event.total * 100;
-                bar.style.width = progress + "%";
-            }
-        };
-		app.loadRunProgram("./file.nsp", onLoad, onProgress);
-    }
-
-    // Resize app (must be called every time the window is resized)
-    function resize() {
-        app.resize();
-    }
-
-    // Toggle fullscreen mode
-    function toggleFullscreen() {
-        app.toggleFullscreen(document.body);
-    }
-
-    // Toggle VR mode
-    function toggleVR() {
-        app.toggleVR();
-    }
-
-    // Toggle AR mode
-    function toggleAR() {
-        app.toggleAR();
-    } 
-    function toggleMarkerbasedAR(){
-		     document.getElementById("markerbased").style.visibility = "visible";
-    }
-function iOS() {
-  return [
-    'iPad Simulator',
-    'iPhone Simulator',
-    'iPod Simulator',
-    'iPad',
-    'iPhone',
-    'iPod'
-  ].includes(navigator.platform)
-  // iPad on iOS 13 detection
-  || (navigator.userAgent.includes("Mac") && "ontouchend" in document)
- }	                
-    </script>
-	<div id="ArMode" onclick="toggleAR();" style="visibility:visible; position:absolute; z-index:10000; right: 145px; bottom:65px">
-			<img style="position:absolute; cursor:pointer; opacity:0.4; width:60px; height:60px" src="./ar.png" onmouseenter="this.style.opacity = 1.0;" onmouseleave="this.style.opacity=0.4;">
-		</div>
-		<div id="loading2">
-			<img id="loading-image" style="position:absolute; width:50%; left:25%;" src = "./Loading.gif" alt="Loading..." />
-		</div>
-	<div id="markerbased" style="visibility:hidden">
-	<a-scene embedded arjs>
- 	<a-marker preset="hiro">
-      	<a-box position='0 0.5 0' material='color: yellow;'></a-box>
-    	</a-marker>
-    	<a-entity camera></a-entity>
-  	</a-scene>
-	</div>
+  <div id="markerbased" style="visibility:hidden">
+  <a-scene embedded arjs>
+  <a-marker preset="hiro">
+        <a-box position='0 0.5 0' material='color: yellow;'></a-box>
+      </a-marker>
+      <a-entity camera></a-entity>
+    </a-scene>
+  </div>
 </body>
 
 </html>
