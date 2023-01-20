@@ -116,6 +116,7 @@
     container = app.getContainer();
     
     let box = document.getElementById('box');
+    delete box.object3D.el;
     box.object3D.children[0].add(container);
     console.log(box.object3D);
     toggleFullscreen();
