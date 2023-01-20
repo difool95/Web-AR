@@ -118,8 +118,10 @@
     let box = document.getElementById('box');
    
     box.object3D.children[0].add(container);
-      console.log(box.object3D.children[0].el);
+      
       box.object3D.children[0].add(container);
+      delete box.object3D.children[0].el;
+      
     //toggleFullscreen();
             // Check if VR is available
           /*  if (app.vrAvailable()) {
