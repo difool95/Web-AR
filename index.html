@@ -116,10 +116,11 @@
     container = app.getContainer();
     
     let box = document.getElementById('box');
-    delete box.object3D.el;
+   
     box.object3D.children[0].add(container);
-    console.log(box.object3D);
-    toggleFullscreen();
+      console.log(box.object3D.children[0].el);
+      box.object3D.children[0].add(container);
+    //toggleFullscreen();
             // Check if VR is available
           /*  if (app.vrAvailable()) {
                 button = document.getElementById("vr");
