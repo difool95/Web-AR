@@ -109,9 +109,10 @@
     app = new Nunu.App();
     // Onload enable the vr and fullscreen buttons
     //var loading = document.getElementById("loading2");
+   
+    var onLoad = function() {
     let canvas = document.getElementById("canvass");
     canvas.setAttribute("hidden", "hidden");
-    var onLoad = function() {
     container = app.getContainer();
     
     let box = document.getElementById('box');
