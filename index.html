@@ -117,8 +117,8 @@
       box.object3D.children[0].add(container);
     //box.children[0].object3D.children.add(container);
 
-    let canvas = document.getElementById("canvass");
-    canvas.setAttribute("hidden", "hidden");
+    //let canvas = document.getElementById("canvass");
+    //canvas.setAttribute("hidden", "hidden");
     //toggleFullscreen();
             // Check if VR is available
           /*  if (app.vrAvailable()) {
@@ -131,8 +131,7 @@
                 button = document.getElementById("ArMode");
                 button.style.visibility = "visible";
                 document.body.removeChild(loading);
-                //toggleAR();
-                toggleMarkerbasedAR();
+                toggleAR();
             }
         };
   
@@ -165,9 +164,7 @@
     function toggleAR() {
         app.toggleAR();
     } 
-    function toggleMarkerbasedAR(){
-         document.getElementById("markerbased").style.visibility = "visible";
-    }
+ 
 function iOS() {
   return [
     'iPad Simulator',
