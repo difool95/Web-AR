@@ -112,7 +112,8 @@
         var onLoad = function() {
     container = app.getContainer();
     
-    let box = document.getElementsByTagName('a-box');
+    let box = document.getElementsByTagName('a-box').object3D;
+    box.add(container);
     console.log(box);
 
     let canvas = document.getElementById("canvass");
