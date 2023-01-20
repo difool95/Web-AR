@@ -111,7 +111,10 @@
         var loading = document.getElementById("loading2");
         var onLoad = function() {
     container = app.getContainer();
-    console.log(container);
+    
+    let scene = document.getElementsByTagName('a-scene');
+    console.log(scene);
+
     let canvas = document.getElementById("canvass");
     canvas.setAttribute("hidden", "hidden");
     //toggleFullscreen();
