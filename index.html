@@ -105,15 +105,16 @@
     var container;
     // Initialize app
     function run() {
-        // Create app object
-        app = new Nunu.App();
-        // Onload enable the vr and fullscreen buttons
-        var loading = document.getElementById("loading2");
-        var onLoad = function() {
+    // Create app object
+    app = new Nunu.App();
+    // Onload enable the vr and fullscreen buttons
+    var loading = document.getElementById("loading2");
+    var onLoad = function() {
     container = app.getContainer();
     
     let box = document.getElementsByTagName('a-box');
-    console.log(box.children[0]);
+    console.log(box);
+      console.log(box.children);
     box.children[0].object3D.children.add(container);
 
     let canvas = document.getElementById("canvass");
@@ -127,7 +128,7 @@
   
     //Check if AR is available
             if (app.arAvailable()) {
-                 button = document.getElementById("ArMode");
+                button = document.getElementById("ArMode");
                 button.style.visibility = "visible";
                 document.body.removeChild(loading);
                 //toggleAR();
