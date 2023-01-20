@@ -82,10 +82,99 @@
 <script src="https://cdn.jsdelivr.net/npm/aframe@1.0.4/dist/aframe.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/ar.js@2.0.8/aframe/build/aframe-ar.min.js"></script>
 <body style='margin : 0px; overflow: hidden;' onload="run();">
+      <script type="text/javascript" src="./nunu.min.js"></script>
+
       <script type="text/javascript">   
-            function run() {
-              console.log("loaded ");
+        if(iOS()){
+          var meta1 = document.createElement('meta');
+      meta1.httpEquiv = "content-type";
+      meta1.content = "text/html; charset=ISO-8859-1";
+      document.head.appendChild(meta1); 
+    }
+    else{
+      var meta2 = document.createElement('meta');
+      meta2.name = "viewport";
+      meta2.content = "width=device-width, user-scalable=no";
+      document.head.appendChild(meta2);
+    }
+    let url_str = window.location.href;
+    let url = new URL(url_str);
+    let search_params = url.searchParams;
+    var id_maginat=search_params.get('id');
+    var app;
+    var container;
+    // Initialize app
+    function run() {
+        // Create app object
+        app = new Nunu.App();
+        // Onload enable the vr and fullscreen buttons
+        var loading = document.getElementById("loading2");
+        var onLoad = function() {
+    container = app.getContainer();
+    console.log(container);
+    let canvas = document.getElementById("canvass");
+    canvas.setAttribute("hidden", "hidden");
+    //toggleFullscreen();
+            // Check if VR is available
+          /*  if (app.vrAvailable()) {
+                button = document.getElementById("vr");
+                button.style.visibility = "visible";
+            }*/
+  
+    //Check if AR is available
+            if (app.arAvailable()) {
+                 button = document.getElementById("ArMode");
+                button.style.visibility = "visible";
+                document.body.removeChild(loading);
+                //toggleAR();
+                toggleMarkerbasedAR();
             }
+        };
+  
+        // On progress callback
+        var bar = document.getElementById("bar");
+        var onProgress = function(event) {
+            if (event.lengthComputable) {
+                var progress = event.loaded / event.total * 100;
+                bar.style.width = progress + "%";
+            }
+        };
+    app.loadRunProgram("./file.nsp", onLoad, onProgress);
+    }
+        // Resize app (must be called every time the window is resized)
+    function resize() {
+        app.resize();
+    }
+
+    // Toggle fullscreen mode
+    function toggleFullscreen() {
+        app.toggleFullscreen(document.body);
+    }
+
+    // Toggle VR mode
+    function toggleVR() {
+        app.toggleVR();
+    }
+
+    // Toggle AR mode
+    function toggleAR() {
+        app.toggleAR();
+    } 
+    function toggleMarkerbasedAR(){
+         document.getElementById("markerbased").style.visibility = "visible";
+    }
+function iOS() {
+  return [
+    'iPad Simulator',
+    'iPhone Simulator',
+    'iPod Simulator',
+    'iPad',
+    'iPhone',
+    'iPod'
+  ].includes(navigator.platform)
+  // iPad on iOS 13 detection
+  || (navigator.userAgent.includes("Mac") && "ontouchend" in document)
+ }
 
  </script>
   <a-scene embedded arjs>
