@@ -113,10 +113,12 @@
     console.log(box.object3D.children[0]);
     //WHEN APP IS LOADED
     var onLoad = function() {
+          console.log("hey1");
     let canvas = document.getElementById("canvass");
     canvas.setAttribute("hidden", "hidden");
     container = app.getContainer();
     box.object3D.children[0].add(container); 
+    console.log("hey2");
 
     //toggleFullscreen();
             // Check if VR is available
