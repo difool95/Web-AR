@@ -81,7 +81,13 @@
 </head>
 <script src="https://cdn.jsdelivr.net/npm/aframe@1.0.4/dist/aframe.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/ar.js@2.0.8/aframe/build/aframe-ar.min.js"></script>
-<body style='margin : 0px; overflow: hidden;'>
+<body style='margin : 0px; overflow: hidden;' onload="run();">
+      <script type="text/javascript">   
+            function run() {
+              console.log("loaded ");
+            }
+
+ </script>
   <a-scene embedded arjs>
   <a-marker preset="hiro">
         <a-box position='0 0.5 0' material='color: yellow;'></a-box>
