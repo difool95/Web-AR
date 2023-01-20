@@ -109,19 +109,15 @@
     app = new Nunu.App();
     // Onload enable the vr and fullscreen buttons
     //var loading = document.getElementById("loading2");
-   
+    let box = document.getElementById('box');
+    console.log(box.object3D.children[0]);
+    //WHEN APP IS LOADED
     var onLoad = function() {
     let canvas = document.getElementById("canvass");
     canvas.setAttribute("hidden", "hidden");
     container = app.getContainer();
-    
-    let box = document.getElementById('box');
-   
-    box.object3D.children[0].add(container);
-      
-      box.object3D.children[0].add(container);
-      delete box.object3D.children[0].geometry;
-      console.log(box.object3D.children[0]);
+    box.object3D.children[0].add(container); 
+
     //toggleFullscreen();
             // Check if VR is available
           /*  if (app.vrAvailable()) {
