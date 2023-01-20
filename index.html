@@ -112,8 +112,8 @@
     var onLoad = function() {
     container = app.getContainer();
     
-    let box = document.getElementsByTagName('a-box');
-      console.log(box.components);
+    let box = document.getElementById('box');
+      console.log(box);
     //box.children[0].object3D.children.add(container);
 
     let canvas = document.getElementById("canvass");
@@ -183,7 +183,7 @@ function iOS() {
  </script>
   <a-scene embedded arjs>
   <a-marker preset="hiro">
-        <a-box position='0 0.5 0' material='color: yellow;'></a-box>
+        <a-box id="box" position='0 0.5 0' material='color: yellow;'></a-box>
       </a-marker>
       <a-entity camera></a-entity>
     </a-scene>
