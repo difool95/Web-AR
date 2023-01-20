@@ -113,8 +113,8 @@
     container = app.getContainer();
     
     let box = document.getElementsByTagName('a-box');
-    console.log(box);
-    box.object3D.children.add(container);
+    console.log(box.children[0]);
+    box.children[0].object3D.children.add(container);
 
     let canvas = document.getElementById("canvass");
     canvas.setAttribute("hidden", "hidden");
