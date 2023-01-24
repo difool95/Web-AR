@@ -91,6 +91,12 @@
   <div id ='loading2'>
              <img src = "./Loading.gif" style= "width:400px;" alt="Loading..." />
   </div>
+    <a-scene embedded arjs>
+  <a-marker preset="hiro" id="marker">
+        <a-box id="box" scale="0.5 0.5 0.5" position='0 0 0' material='opacity: 0.0; transparent: true'>></a-box>
+      </a-marker>
+      <a-entity camera></a-entity>
+    </a-scene>
       <script type="text/javascript" src="./nunu.min.js"></script>
 
       <script type="text/javascript">   
@@ -120,10 +126,10 @@
     // Onload enable the vr and fullscreen buttons
     //var loading = document.getElementById("loading2");
     var box = document.getElementById('box');
+    var debugContainer = document.getElementById("arjsDebugUIContainer");
     //var marker = document.getElementById('marker')
     //WHEN APP IS LOADED
     var onLoad = function() {
-    var debugContainer = document.getElementById("arjsDebugUIContainer");
     document.body.removeChild(loading);
     document.body.removeChild(debugContainer);
     let canvas = document.getElementById("canvass");
@@ -192,12 +198,7 @@ function iOS() {
  }
 
  </script>
-  <a-scene embedded arjs>
-  <a-marker preset="hiro" id="marker">
-        <a-box id="box" scale="0.5 0.5 0.5" position='0 0 0' material='opacity: 0.0; transparent: true'>></a-box>
-      </a-marker>
-      <a-entity camera></a-entity>
-    </a-scene>
+
 </body>
 
 </html>
