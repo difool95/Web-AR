@@ -82,6 +82,7 @@
 <script src="https://cdn.jsdelivr.net/npm/aframe@1.0.4/dist/aframe.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/ar.js@2.0.8/aframe/build/aframe-ar.min.js"></script>
 <body style='margin : 0px; overflow: hidden;' onload="run();">
+             <img id="loading2" style="position:absolute; width:100%;" src = "./Loading.gif" alt="Loading..." />
       <script type="text/javascript" src="./nunu.min.js"></script>
 
       <script type="text/javascript">   
@@ -182,7 +183,6 @@ function iOS() {
 
  </script>
   <a-scene embedded arjs>
-           <img id="loading2" style="position:absolute; width:100%;" src = "./Loading.gif" alt="Loading..." />
   <a-marker preset="hiro">
         <a-box id="box" position='0 0.5 0' material='color: yellow;'></a-box>
       </a-marker>
