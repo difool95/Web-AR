@@ -81,23 +81,15 @@
     #loading2 {
   display: flex;
   justify-content: center;
+  margin-top: 18%;
 }
- /*   #loading2{
-    position: absolute;
-    top: 30%;
-    left: 14%;
-    margin-top: -50px;
-    margin-left: -50px;
-    width: 400px;
-    height: 400px;
-}*/
 </style>
 </head>
 <script src="https://cdn.jsdelivr.net/npm/aframe@1.0.4/dist/aframe.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/ar.js@2.0.8/aframe/build/aframe-ar.min.js"></script>
 <body style='margin : 0px; overflow: hidden;' onload="run();">
   <div id ='loading2'>
-             <img src = "./Loading.gif" style= "width:500px;" alt="Loading..." />
+             <img src = "./Loading.gif" style= "width:400px;" alt="Loading..." />
   </div>
       <script type="text/javascript" src="./nunu.min.js"></script>
 
@@ -130,7 +122,7 @@
     let box = document.getElementById('box');
     //WHEN APP IS LOADED
     var onLoad = function() {
-    //document.body.removeChild(loading);
+    document.body.removeChild(loading);
     let canvas = document.getElementById("canvass");
     canvas.setAttribute("hidden", "hidden");
     container = app.getContainer();
