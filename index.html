@@ -115,6 +115,7 @@
     // Initialize app
     function run() {
     var loading = document.getElementById("loading2");
+    var debugContainer = document.getElementById("arjsDebugUIContainer");
     // Create app object
     app = new Nunu.App();
     // Onload enable the vr and fullscreen buttons
@@ -124,11 +125,12 @@
     //WHEN APP IS LOADED
     var onLoad = function() {
     document.body.removeChild(loading);
+    document.body.removeChild(debugContainer);
     let canvas = document.getElementById("canvass");
     canvas.setAttribute("hidden", "hidden");
     container = app.getContainer();
     box.object3D.children[0].add(container); 
-    console.log(box.object3D);
+     
     //toggleFullscreen();
             // Check if VR is available
           /*  if (app.vrAvailable()) {
