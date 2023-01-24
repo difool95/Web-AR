@@ -92,8 +92,9 @@
              <img src = "./Loading.gif" style= "width:400px;" alt="Loading..." />
   </div>
     <a-scene embedded arjs='debugUIEnabled: false;'>
-  <a-marker preset="hiro" id="marker">
-        <a-box id="box" scale="0.5 0.5 0.5" position='0 0 0' material='opacity: 0.0; transparent: true'>></a-box>
+      <a-marker type='pattern' url='./pattern.patt'>
+      <!-- <a-marker preset="hiro" id="marker">-->
+      <a-box id="box" scale="0.5 0.5 0.5" position='0 0 0' material='opacity: 0.0; transparent: true'>></a-box>
       </a-marker>
       <a-entity camera></a-entity>
     </a-scene>
@@ -126,7 +127,6 @@
     // Onload enable the vr and fullscreen buttons
     //var loading = document.getElementById("loading2");
     var box = document.getElementById('box');
-    //var marker = document.getElementById('marker')
     //WHEN APP IS LOADED
     var onLoad = function() {
     document.body.removeChild(loading);
