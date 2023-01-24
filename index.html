@@ -119,16 +119,16 @@
     app = new Nunu.App();
     // Onload enable the vr and fullscreen buttons
     //var loading = document.getElementById("loading2");
-    //var box = document.getElementById('box');
-    var marker = document.getElementById('marker')
+    var box = document.getElementById('box');
+    //var marker = document.getElementById('marker')
     //WHEN APP IS LOADED
     var onLoad = function() {
     document.body.removeChild(loading);
     let canvas = document.getElementById("canvass");
     canvas.setAttribute("hidden", "hidden");
     container = app.getContainer();
-    //box.object3D.children[0].add(container); 
-    marker.children[0].add(container);
+    box.object3D.children[0].add(container); 
+    console.log(box.object3D);
     //toggleFullscreen();
             // Check if VR is available
           /*  if (app.vrAvailable()) {
@@ -192,7 +192,7 @@ function iOS() {
  </script>
   <a-scene embedded arjs>
   <a-marker preset="hiro" id="marker">
-        <a-box id="box" position='0 0.5 0' material='color: yellow;'></a-box>
+        <a-box id="box" position='0 0.5 0' material='color: red;'></a-box>
       </a-marker>
       <a-entity camera></a-entity>
     </a-scene>
