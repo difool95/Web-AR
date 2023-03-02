@@ -94,17 +94,21 @@
   <div id ='loading2'>
   <img src = "./Loading.gif" style= "width:400px;" alt="Loading..." />
   </div>
-    <a-scene embedded arjs='debugUIEnabled: false;'>
-       <a-nft
-        type="nft"
-        url="https://raw.githubusercontent.com/AR-js-org/AR.js/master/aframe/examples/image-tracking/nft/trex-image-big.jpeg"
-        smooth="true"
-        smoothCount="10"
-        smoothTolerance=".01"
-        smoothThreshold="5">
+    <a-scene>
+        <!-- Ask user for camera permissions -->
+        <a-entity zappar-permissions-ui id="permissions"></a-entity>
+        <!-- Browser Compatibility -->
+        <a-entity zappar-compatibility-ui id="compatibility"></a-entity>
+        <a-assets>
+            <a-asset-item id="target-file" src="earth.zpt"/>
+        </a-assets>
+
+        <a-entity camera zappar-camera></a-entity>
+
+        <a-entity zappar-image="target: #target-file" id="image-group">
+            <!-- PLACE 3D OBJECTS HERE TO TRACK FROM THE CENTER OF THE IMAGE -->
             <a-box id="box" scale="0.5 0.5 0.5" position='0 0 0' material='opacity: 0.0; transparent: true'>></a-box>
-      </a-nft>
-      <a-entity camera></a-entity>
+        </a-entity>
     </a-scene>
       <script type="text/javascript" src="./nunu.min.js"></script>
 
