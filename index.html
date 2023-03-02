@@ -111,13 +111,13 @@
         <a-entity zappar-image="target: #target-file" id="image-group">
             <!-- PLACE 3D OBJECTS HERE TO TRACK FROM THE CENTER OF THE IMAGE -->
             <!--<a-box id="box" scale="0.5 0.5 0.5" position='0 0 0' material='opacity: 0.0; transparent: true'>></a-box>-->
-            <a-box position="0 0 0.5"></a-box>
+            <a-box id="box" position="0 0 0.5"></a-box>
         </a-entity>
     </a-scene>
       <script type="text/javascript" src="./nunu.min.js"></script>
 
       <script type="text/javascript">   
-        if(iOS()){
+       /* if(iOS()){
           var meta1 = document.createElement('meta');
       meta1.httpEquiv = "content-type";
       meta1.content = "text/html; charset=ISO-8859-1";
@@ -128,7 +128,7 @@
       meta2.name = "viewport";
       meta2.content = "width=device-width, user-scalable=no";
       document.head.appendChild(meta2);
-    }
+    }*/
     let url_str = window.location.href;
     let url = new URL(url_str);
     let search_params = url.searchParams;
