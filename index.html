@@ -82,6 +82,7 @@
     let canvas = document.getElementById("canvass");
     canvas.setAttribute("hidden", "hidden");
     container = app.getContainer();
+    container.rotation.set(new THREE.Vector3( Math.PI / 2, 0, 0));
     box.object3D.children[0].add(container); 
      
     //toggleFullscreen();
