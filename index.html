@@ -85,7 +85,24 @@
     box.object3D.children[0].add(container); 
     //container.rotation.set(new THREE.Vector3(1.6, 0, 0));
     container.rotateX(1.6);
-
+    const myImageGroup = document.getElementById("image-group");
+    let imageVisible = false;
+    myImageGroup.addEventListener("zappar-visible", () => {
+        // The image has appeared so show the group
+        myImageGroup.setAttribute("visible", "true");
+        imageVisible = true;
+        box.object3D.visible = true;
+    });
+    myImageGroup.addEventListener("zappar-notvisible", () => {
+        // The image has disappeared so hide the group after a short delay
+        imageVisible = false;
+        setTimeout(() => {
+            if (imageVisible === false){
+              myImageGroup.setAttribute("visible", "false");
+              box.object3D.visible = false;
+            }
+        }, 500)
+    });
     //toggleFullscreen();
             // Check if VR is available
           /*  if (app.vrAvailable()) {
