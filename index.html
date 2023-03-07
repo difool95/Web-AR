@@ -54,7 +54,7 @@
           var meta1 = document.createElement('meta');
       meta1.httpEquiv = "content-type";
       meta1.content = "text/html; charset=ISO-8859-1";
-      document.head.appendChild(meta1); 
+      document.head.appendChild(meta1);
     }
     else{
       var meta2 = document.createElement('meta');
@@ -71,6 +71,7 @@
     // Initialize app
     function run() {
     var loading = document.getElementById("loading2");
+      loading.style.zIndex = 1000;
     // Create app object
     app = new Nunu.App();
     // Onload enable the vr and fullscreen buttons
