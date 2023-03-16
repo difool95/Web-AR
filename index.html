@@ -34,6 +34,7 @@
     let url = new URL(url_str);
     let search_params = url.searchParams;
     var id_maginat = search_params.get('id');
+    console.log(id_maginat);
   </script>
   <div id ='loading2'>
   <img src = "./Loading.gif" style= "width:400px;" alt="Loading..." />
@@ -44,7 +45,7 @@
         <!-- Browser Compatibility -->
         <a-entity zappar-compatibility-ui id="compatibility"></a-entity>
         <a-assets>
-            <a-asset-item id="target-file" src= "" + id_maginat + ".zpt" />
+            <a-asset-item id="target-file" src= "./" +id_maginat + ".zpt" />
         </a-assets>
         <!--  <a-entity camera> </a-entity>-->
         <a-entity camera zappar-camera></a-entity>
