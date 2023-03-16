@@ -45,7 +45,7 @@
         <!-- Browser Compatibility -->
         <a-entity zappar-compatibility-ui id="compatibility"></a-entity>
         <a-assets>
-            <a-asset-item id="target-file" src= "tiger" + ".zpt" />
+            <a-asset-item id="target-file"/>
         </a-assets>
         <!--  <a-entity camera> </a-entity>-->
         <a-entity camera zappar-camera></a-entity>
@@ -76,6 +76,8 @@
     // Initialize app
     function run() {
     var loading = document.getElementById("loading2");
+      const targetFile = document.getElementById("target-file");
+      targetFile.src = "tiger.zpt";
     // Create app object
     app = new Nunu.App();
     // Onload enable the vr and fullscreen buttons
