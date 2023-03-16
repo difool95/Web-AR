@@ -29,6 +29,12 @@
 <script src="./zappar/zappar-aframe.js"></script>
 
 <body onload="run();">
+  <script type="text/javascript"> 
+    var url_str = window.location.href;
+    let url = new URL(url_str);
+    let search_params = url.searchParams;
+    var id_maginat = search_params.get('id');
+  </script>
   <div id ='loading2'>
   <img src = "./Loading.gif" style= "width:400px;" alt="Loading..." />
   </div>
@@ -38,7 +44,7 @@
         <!-- Browser Compatibility -->
         <a-entity zappar-compatibility-ui id="compatibility"></a-entity>
         <a-assets>
-            <a-asset-item id="target-file" src= id_maginat/>
+            <a-asset-item id="target-file" src= "" + id_maginat />
         </a-assets>
         <!--  <a-entity camera> </a-entity>-->
         <a-entity camera zappar-camera></a-entity>
@@ -63,10 +69,7 @@
       meta2.content = "width=device-width, user-scalable=no";
       document.head.appendChild(meta2);
     }*/
-     var url_str = window.location.href;
-    let url = new URL(url_str);
-    let search_params = url.searchParams;
-    var id_maginat = search_params.get('id');
+
     var app;
     var container;
     // Initialize app
