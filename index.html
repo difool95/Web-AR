@@ -41,7 +41,7 @@
   </div>
     <a-scene device-orientation-permission-ui="enabled: false">
         <!-- Ask user for camera permissions, display some text if permission is denied -->
-        <a-entity zappar-permissions-ui id="permissions"></a-entity>
+        <!--<a-entity zappar-permissions-ui id="permissions"></a-entity>-->
         <!-- Browser Compatibility -->
         <a-entity zappar-compatibility-ui id="compatibility"></a-entity>
         <a-assets>
@@ -76,8 +76,8 @@
     // Initialize app
     function run() {
     var loading = document.getElementById("loading2");
-      const targetFile = document.getElementById("target-file");
-      targetFile.setAttribute("src", "earth.zpt");
+    const targetFile = document.getElementById("target-file");
+    targetFile.setAttribute("src", "earth.zpt");
     // Create app object
     app = new Nunu.App();
     // Onload enable the vr and fullscreen buttons
@@ -85,10 +85,20 @@
     //WHEN APP IS LOADED
     var onLoad = function() {
     document.body.removeChild(loading);
+     // Show Zappar's built-in UI to request camera permissions
+Zappar.permissionRequestUI().then(granted => {
+    if (granted) {
+        // User granted the permissions so start the camera
+        source.start();
+    } else {
+        // User denied the permissions so show Zappar's built-in 'permission denied' UI
+        Zappar.permissionDeniedUI();
+    }
+});
     let canvas = document.getElementById("canvass");
     canvas.setAttribute("hidden", "hidden");
     container = app.getContainer();
-    box.object3D.children[0].add(container); 
+    box.object3D.children[0].add(container);
     //container.rotation.set(new THREE.Vector3(1.6, 0, 0));
     container.rotateX(1.6);
     const myImageGroup = document.getElementById("image-group");
