@@ -39,9 +39,9 @@
   <div id ='loading2'>
   <img src = "./Loading.gif" style= "width:400px;" alt="Loading..." />
   </div>
-    <a-scene>
+    <a-scene device-orientation-permission-ui="enabled: false">
         <!-- Ask user for camera permissions, display some text if permission is denied -->
-        <!--<a-entity zappar-permissions-ui id="permissions"></a-entity>-->
+        <a-entity zappar-permissions-ui id="permissions"></a-entity>
         <!-- Browser Compatibility -->
         <a-entity zappar-compatibility-ui id="compatibility"></a-entity>
         <a-assets>
