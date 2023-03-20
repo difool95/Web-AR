@@ -68,8 +68,7 @@
     video.style.zIndex = 1;
       if(loaded){
         document.body.removeChild(loading);
-            const targetFile = document.getElementById("target-file");
-            targetFile.setAttribute("src", "earth.zpt");
+            
       }
       else{
         document.body.appendChild(loading);
@@ -84,10 +83,12 @@
     var box = document.getElementById('box');
     //WHEN APP IS LOADED
     var onLoad = function() {
-      
+    document.body.removeChild(loading);
     document.body.innerHTML += '<a-scene device-orientation-permission-ui="enabled: false"><!-- Ask user for camera permissions, display some text if permission is denied --><a-entity zappar-permissions-ui id="permissions"> </a-entity><a-entity zappar-compatibility-ui id="compatibility"><a-entity text="value: Browser incompatible!" position="0 0 -2"></a-entity></a-entity><a-assets><a-asset-item id="target-file" src= "tiger.zpt"/></a-assets><a-entity camera zappar-camera></a-entity><a-entity zappar-image="target: #target-file" id="image-group"><a-box id="box" position="0 0 0.5" material="opacity: 0.0; transparent: true"></a-box></a-entity></a-scene>';
     loaded = true;
-    document.body.removeChild(loading);
+      
+    const targetFile = document.getElementById("target-file");
+    targetFile.setAttribute("src", "earth.zpt");
     let canvas = document.getElementById("canvass");
     canvas.setAttribute("hidden", "hidden");
     container = app.getContainer();
