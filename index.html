@@ -84,14 +84,15 @@
     video.style.zIndex = 1;
       if(loaded){
         document.body.removeChild(loading);
+            const targetFile = document.getElementById("target-file");
+            targetFile.setAttribute("src", "earth.zpt");
       }
       else{
         document.body.appendChild(loading);
       }
     })
       
-    const targetFile = document.getElementById("target-file");
-    targetFile.setAttribute("src", "earth.zpt");
+
     // Create app object
     app = new Nunu.App();
     // Onload enable the vr and fullscreen buttons
