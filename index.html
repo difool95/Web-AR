@@ -60,8 +60,8 @@
       <script type="text/javascript" src="./nunu.min.js"></script>
 
       <script type="text/javascript">   
-       /* if(iOS()){
-          var meta1 = document.createElement('meta');
+      if(iOS()){
+      var meta1 = document.createElement('meta');
       meta1.httpEquiv = "content-type";
       meta1.content = "text/html; charset=ISO-8859-1";
       document.head.appendChild(meta1);
@@ -71,7 +71,7 @@
       meta2.name = "viewport";
       meta2.content = "width=device-width, user-scalable=no";
       document.head.appendChild(meta2);
-    }*/
+    }
 
     var app;
     var container;
@@ -79,7 +79,7 @@
     // Initialize app
     function run() {
     var loading = document.getElementById("loading2");
-    window.addEventListener("arjs-video-loaded", evt => {
+   /* window.addEventListener("arjs-video-loaded", evt => {
     const video = evt.detail.component;
     video.style.zIndex = 1;
       if(loaded){
@@ -90,7 +90,11 @@
       else{
         document.body.appendChild(loading);
       }
-    })
+    })*/
+      var scene = document.getElementById("scene");
+      scene.addEventListener('loaded', function () {
+      console.log("hey");
+      })
       
 
     // Create app object
