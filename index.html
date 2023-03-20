@@ -34,7 +34,6 @@
     let url = new URL(url_str);
     let search_params = url.searchParams;
     var id_maginat = search_params.get('id');
-    console.log(id_maginat);
   </script>
   <div id ='loading2'>
   <img src = "./Loading.gif" style= "width:400px;" alt="Loading..." />
@@ -81,7 +80,7 @@
     var loading = document.getElementById("loading2");
     window.addEventListener("arjs-video-loaded", evt => {
     const video = evt.detail.component;
-    console.log(video);
+    console.log(video.style.zIndex);
     })
       
     const targetFile = document.getElementById("target-file");
