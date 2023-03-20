@@ -79,10 +79,10 @@
     // Initialize app
     function run() {
     var loading = document.getElementById("loading2");
-    //var el = document.createElement('a-entity');
-    //el.setAttribute("position", position);
-    //var scene = document.getElementById('scene');
-    //scene.appendChild(el);
+    window.addEventListener("arjs-video-loaded", evt => {
+    const video = evt.detail.component;
+    console.log(video);
+    })
       
     const targetFile = document.getElementById("target-file");
     targetFile.setAttribute("src", "earth.zpt");
@@ -92,8 +92,7 @@
     var box = document.getElementById('box');
     //WHEN APP IS LOADED
     var onLoad = function() {
-     var video = document.getElementById("arjs-video");
-     video.style.zIndex = "-1";
+    
 
     //document.body.removeChild(loading);
     let canvas = document.getElementById("canvass");
