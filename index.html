@@ -80,7 +80,7 @@
     var loading = document.getElementById("loading2");
     window.addEventListener("arjs-video-loaded", evt => {
     const video = evt.detail.component;
-    console.log(video.style.zIndex);
+    video.style.zIndex = 1;
     })
       
     const targetFile = document.getElementById("target-file");
