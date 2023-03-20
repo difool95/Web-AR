@@ -35,29 +35,11 @@
     let search_params = url.searchParams;
     var id_maginat = search_params.get('id');
   </script>
-
-    <a-scene id="scene" device-orientation-permission-ui="enabled: false">
-        <!-- Ask user for camera permissions, display some text if permission is denied -->
-        <a-entity zappar-permissions-ui id="permissions"> </a-entity>
-        <!-- Browser Compatibility -->
-        <a-entity zappar-compatibility-ui id="compatibility">
-        <!-- Remove the text entity to use Zappar's default compatibility UI -->
-        <a-entity text="value: Browser incompatible!" position="0 0 -2"></a-entity>
-        </a-entity>
-        <a-assets>
-            <a-asset-item id="target-file" src= "tiger.zpt"/>
-        </a-assets>
-        <!--  <a-entity camera> </a-entity>-->
-        <a-entity camera zappar-camera></a-entity>
-        <a-entity zappar-image="target: #target-file" id="image-group">
-            <!-- PLACE 3D OBJECTS HERE TO TRACK FROM THE CENTER OF THE IMAGE -->
-            <!--<a-box id="box" scale="0.5 0.5 0.5" position='0 0 0' material='opacity: 0.0; transparent: true'>></a-box>-->
-            <a-box id="box" position="0 0 0.5" material='opacity: 0.0; transparent: true'></a-box>
-        </a-entity>
-    </a-scene>
-    <div id ='loading2'>
+  <div id ='loading2'>
   <img src = "./Loading.gif" style= "width:400px;" alt="Loading..." />
   </div>
+
+   
       <script type="text/javascript" src="./nunu.min.js"></script>
 
       <script type="text/javascript">   
@@ -76,10 +58,11 @@
 
     var app;
     var container;
-        var loaded;
+    var loaded;
     // Initialize app
     function run() {
     var loading = document.getElementById("loading2");
+    
    /* window.addEventListener("arjs-video-loaded", evt => {
     const video = evt.detail.component;
     video.style.zIndex = 1;
@@ -92,10 +75,7 @@
         document.body.appendChild(loading);
       }
     })*/
-      var scene = document.getElementById("scene");
-      scene.addEventListener('loaded', function () {
-      console.log("hey");
-      })
+
       
 
     // Create app object
@@ -104,6 +84,8 @@
     var box = document.getElementById('box');
     //WHEN APP IS LOADED
     var onLoad = function() {
+      
+    document.body.innerHTML += '<a-scene device-orientation-permission-ui="enabled: false"><!-- Ask user for camera permissions, display some text if permission is denied --><a-entity zappar-permissions-ui id="permissions"> </a-entity><a-entity zappar-compatibility-ui id="compatibility"><a-entity text="value: Browser incompatible!" position="0 0 -2"></a-entity></a-entity><a-assets><a-asset-item id="target-file" src= "tiger.zpt"/></a-assets><a-entity camera zappar-camera></a-entity><a-entity zappar-image="target: #target-file" id="image-group"><a-box id="box" position="0 0 0.5" material="opacity: 0.0; transparent: true"></a-box></a-entity></a-scene>';
     loaded = true;
     document.body.removeChild(loading);
     let canvas = document.getElementById("canvass");
