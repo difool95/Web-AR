@@ -39,12 +39,9 @@
   <div id ='loading2'>
   <img src = "./Loading.gif" style= "width:400px;" alt="Loading..." />
   </div>
-    <a-scene device-orientation-permission-ui="enabled: false">
+    <a-scene id="scene" device-orientation-permission-ui="enabled: false">
         <!-- Ask user for camera permissions, display some text if permission is denied -->
-        <a-entity zappar-permissions-ui id="permissions">
-        <!-- Remove the text entity to use Zappar's default permission denied UI -->
-        <a-entity text="value: Please reload the page, accepting the camera permissions." position="0 0 -2"></a-entity>
-        </a-entity>
+        <a-entity zappar-permissions-ui id="permissions"> </a-entity>
         <!-- Browser Compatibility -->
         <a-entity zappar-compatibility-ui id="compatibility">
         <!-- Remove the text entity to use Zappar's default compatibility UI -->
@@ -82,6 +79,11 @@
     // Initialize app
     function run() {
     var loading = document.getElementById("loading2");
+    //var el = document.createElement('a-entity');
+    //el.setAttribute("position", position);
+    //var scene = document.getElementById('scene');
+    //scene.appendChild(el);
+      
     const targetFile = document.getElementById("target-file");
     targetFile.setAttribute("src", "earth.zpt");
     // Create app object
@@ -90,7 +92,7 @@
     var box = document.getElementById('box');
     //WHEN APP IS LOADED
     var onLoad = function() {
-    document.body.removeChild(loading);
+    //document.body.removeChild(loading);
     let canvas = document.getElementById("canvass");
     canvas.setAttribute("hidden", "hidden");
     container = app.getContainer();
