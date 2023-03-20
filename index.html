@@ -75,12 +75,19 @@
 
     var app;
     var container;
+        var loaded;
     // Initialize app
     function run() {
     var loading = document.getElementById("loading2");
     window.addEventListener("arjs-video-loaded", evt => {
     const video = evt.detail.component;
     video.style.zIndex = 1;
+      if(loaded){
+        document.body.removeChild(loading);
+      }
+      else{
+        document.body.appendChild(loading);
+      }
     })
       
     const targetFile = document.getElementById("target-file");
@@ -91,9 +98,8 @@
     var box = document.getElementById('box');
     //WHEN APP IS LOADED
     var onLoad = function() {
-    
-
-    //document.body.removeChild(loading);
+    loaded = true;
+    document.body.removeChild(loading);
     let canvas = document.getElementById("canvass");
     canvas.setAttribute("hidden", "hidden");
     container = app.getContainer();
