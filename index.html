@@ -35,9 +35,7 @@
     let search_params = url.searchParams;
     var id_maginat = search_params.get('id');
   </script>
-  <div id ='loading2'>
-  <img src = "./Loading.gif" style= "width:400px;" alt="Loading..." />
-  </div>
+
     <a-scene id="scene" device-orientation-permission-ui="enabled: false">
         <!-- Ask user for camera permissions, display some text if permission is denied -->
         <a-entity zappar-permissions-ui id="permissions"> </a-entity>
@@ -57,6 +55,9 @@
             <a-box id="box" position="0 0 0.5" material='opacity: 0.0; transparent: true'></a-box>
         </a-entity>
     </a-scene>
+    <div id ='loading2'>
+  <img src = "./Loading.gif" style= "width:400px;" alt="Loading..." />
+  </div>
       <script type="text/javascript" src="./nunu.min.js"></script>
 
       <script type="text/javascript">   
