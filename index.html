@@ -36,23 +36,10 @@
   <div id ='loading2'>
   <img src = "./Loading.gif" style= "width:400px;" alt="Loading..." />
   </div>
-<!--<a-scene device-orientation-permission-ui="enabled: false">
-  <a-entity zappar-permissions-ui id="permissions"></a-entity>
-  <a-entity zappar-compatibility-ui id="compatibility">
-    <a-entity text="value: Browser incompatible!" position="0 0 -2">
-    </a-entity>
-  </a-entity>
-  <a-assets>
-    <a-asset-item id="target-file" src= "tiger.zpt"/></a-assets>
-  <a-entity camera zappar-camera></a-entity>
-  <a-entity zappar-image="target: #target-file" id="image-group"><a-box id="box" position="0 0 0.5" material="opacity: 0.0; transparent: true">
-    </a-box>
-  </a-entity>
-  </a-scene>-->
    <a-scene mindar-image="imageTargetSrc: https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.2.1/examples/image-tracking/assets/card-example/card.mind;" color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
       <a-assets>
         <img id="card" src="card.png" />
-        <a-asset-item id="avatarModel" src="scene.gltf"></a-asset-item>
+        <a-asset-item id="avatarModel" src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.1/examples/image-tracking/assets/card-example/softmind/scene.gltf"></a-asset-item>
       </a-assets>
 
       <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
