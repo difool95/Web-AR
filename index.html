@@ -100,29 +100,29 @@
 
     // Create app object
     app = new Nunu.App();
-    var box = document.getElementById('box');
+    //var box = document.getElementById('box');
     // Onload enable the vr and fullscreen buttons
     //WHEN APP IS LOADED
     var onLoad = function() {
     //document.body.removeChild(loading);
     loaded = true;
-    const targetFile = document.getElementById("target-file");
-    targetFile.setAttribute("src", "earth.zpt");
+    //const targetFile = document.getElementById("target-file");
+    //targetFile.setAttribute("src", "earth.zpt");
     let canvas = document.getElementById("canvass");
     canvas.setAttribute("hidden", "hidden");
     container = app.getContainer();
-    box.object3D.children[0].add(container);
+    //box.object3D.children[0].add(container);
     //container.rotation.set(new THREE.Vector3(1.6, 0, 0));
     container.rotateX(1.6);
     const myImageGroup = document.getElementById("image-group");
     let imageVisible = false;
-    myImageGroup.addEventListener("zappar-visible", () => {
+    /*myImageGroup.addEventListener("zappar-visible", () => {
         // The image has appeared so show the group
         myImageGroup.setAttribute("visible", "true");
         imageVisible = true;
         box.object3D.visible = true;
-    });
-    myImageGroup.addEventListener("zappar-notvisible", () => {
+    });*/
+    /*myImageGroup.addEventListener("zappar-notvisible", () => {
         // The image has disappeared so hide the group after a short delay
         imageVisible = false;
         setTimeout(() => {
@@ -131,7 +131,7 @@
               box.object3D.visible = false;
             }
         }, 500)
-    });
+    });*/
     //toggleFullscreen();
             // Check if VR is available
           /*  if (app.vrAvailable()) {
