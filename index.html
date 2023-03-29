@@ -83,20 +83,6 @@
     // Initialize app
     function run() {
     var loading = document.getElementById("loading2");
-    
-   /* window.addEventListener("arjs-video-loaded", evt => {
-    const video = evt.detail.component;
-    video.style.zIndex = 1;
-      if(loaded){
-        document.body.removeChild(loading);
-            
-      }
-      else{
-        document.body.appendChild(loading);
-      }
-    })*/
-
-      
 
     // Create app object
     app = new Nunu.App();
@@ -104,7 +90,7 @@
     // Onload enable the vr and fullscreen buttons
     //WHEN APP IS LOADED
     var onLoad = function() {
-    //document.body.removeChild(loading);
+    document.body.removeChild(loading);
     loaded = true;
     //const targetFile = document.getElementById("target-file");
     //targetFile.setAttribute("src", "earth.zpt");
@@ -116,22 +102,7 @@
     container.rotateX(1.6);
     const myImageGroup = document.getElementById("image-group");
     let imageVisible = false;
-    /*myImageGroup.addEventListener("zappar-visible", () => {
-        // The image has appeared so show the group
-        myImageGroup.setAttribute("visible", "true");
-        imageVisible = true;
-        box.object3D.visible = true;
-    });*/
-    /*myImageGroup.addEventListener("zappar-notvisible", () => {
-        // The image has disappeared so hide the group after a short delay
-        imageVisible = false;
-        setTimeout(() => {
-            if (imageVisible === false){
-              myImageGroup.setAttribute("visible", "false");
-              box.object3D.visible = false;
-            }
-        }, 500)
-    });*/
+
     //toggleFullscreen();
             // Check if VR is available
           /*  if (app.vrAvailable()) {
