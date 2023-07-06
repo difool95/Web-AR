@@ -12,17 +12,28 @@
 </head>
 <body>
   <iframe id="myIframe" src="http://localhost:3000/chatbotobjlolpokl" height="500rem" width="700rem"></iframe>
-  <button onclick="sendMessageToIframe()">Click Me</button>
+  <button onclick="sendMessageToIframe()">Speak</button>
 
    <script>
+    let recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+    let language = "french";
     const iframe = document.getElementById('myIframe').contentWindow;
+
+    function speaking(){
+            var speech = true;
+            window.SpeechRecognition = window.webkitSpeechRecognition;
+
+    }
 
     // Send a message to the iframe
     function sendMessageToIframe() {
-      console.log("image sent");
       const message = 'Bonjour qui etes vous!';
       iframe.postMessage(message, 'http://localhost:3000/chatbotobjlolpokl'); // Replace with your React app's URL
     }
+
+     window.addEventListener('message', function (event) {
+      console.log("the language is: " + event.data); // Message received from parent
+    });
 
 
     // Receive messages from the iframe
