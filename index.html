@@ -12,27 +12,55 @@
 </head>
 <body>
   <iframe id="myIframe" src="http://localhost:3000/chatbotobjlolpokl" height="500rem" width="700rem"></iframe>
-  <button onclick="sendMessageToIframe()">Speak</button>
+  <button id ="speakBtn" onclick="speaking()">Speak</button>
 
    <script>
     let recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
     let language = "french";
     const iframe = document.getElementById('myIframe').contentWindow;
+    let voiceMessage = "";
 
     function speaking(){
             var speech = true;
             window.SpeechRecognition = window.webkitSpeechRecognition;
+            if(language == "french") recognition.lang = "fr-FR";
+            else if(language == "english") recognition.lang = "en-US";
+            else if(language == "arabic") recognition.lang = "ar-TN";
+            recognition.interimResults = true;
+      recognition.addEventListener('result', speechResultHandler);
+      recognition.addEventListener('speechend', speechEndHandler);
+
+      if (speech == true) {
+        recognition.start();
+      }
 
     }
 
+    function speechResultHandler(e) {
+    voiceMessage = Array.from(e.results)
+      .map(result => result[0])
+      .map(result => result.transcript)
+      .join('')
+
+  }
+  function speechEndHandler() {
+    console.log('Texte: ' + voiceMessage);
+    if (voiceMessage != "") document.getElementById("speakBtn").style.display = "none"
+   
+      recognition.stop(); // Stop the recognition process
+      //SEND VOICE MESSAGE WITH API TO EMBEDDED REACT JS
+    sendMessageToIframe();
+  }
+
     // Send a message to the iframe
     function sendMessageToIframe() {
-      const message = 'Bonjour qui etes vous!';
+      const message = voiceMessage;
       iframe.postMessage(message, 'http://localhost:3000/chatbotobjlolpokl'); // Replace with your React app's URL
     }
 
      window.addEventListener('message', function (event) {
       console.log("the language is: " + event.data); // Message received from parent
+      language = event.data;
     });
 
 
