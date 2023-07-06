@@ -23,6 +23,7 @@
     function speaking(){
             var speech = true;
             window.SpeechRecognition = window.webkitSpeechRecognition;
+            console.log("the language is " + language);
             if(language == "french") recognition.lang = "fr-FR";
             else if(language == "english") recognition.lang = "en-US";
             else if(language == "arabic") recognition.lang = "ar-TN";
@@ -45,7 +46,7 @@
   }
   function speechEndHandler() {
     console.log('Texte: ' + voiceMessage);
-    if (voiceMessage != "") document.getElementById("speakBtn").style.display = "none"
+    if (voiceMessage != "") document.getElementById("speakBtn").style.display = "none";
    
       recognition.stop(); // Stop the recognition process
       //SEND VOICE MESSAGE WITH API TO EMBEDDED REACT JS
@@ -61,6 +62,9 @@
      window.addEventListener('message', function (event) {
       console.log("the language is: " + event.data); // Message received from parent
       language = event.data;
+      if(event.data == "can speak") {
+          document.getElementById("speakBtn").style.display = "inline";
+      }
     });
 
 
