@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Web Page</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+    
+  </style>
+</head>
+<body>
+  <iframe id="myIframe" src="http://localhost:3000/chatbotobjlolpokl" height="500rem" width="700rem"></iframe>
+  <button onclick="sendMessageToIframe()">Click Me</button>
+
+   <script>
+    const iframe = document.getElementById('myIframe').contentWindow;
+
+    // Send a message to the iframe
+    function sendMessageToIframe() {
+      console.log("image sent");
+      const message = 'Bonjour qui etes vous!';
+      iframe.postMessage(message, 'http://localhost:3000/chatbotobjlolpokl'); // Replace with your React app's URL
+    }
+
+
+    // Receive messages from the iframe
+    /*window.addEventListener('message', function(event) {
+      // Check the origin of the message
+      if (event.origin !== 'http://localhost:3000') { // Replace with your React app's URL
+        return;
+      }
+
+      // Handle the received message from the iframe
+      console.log('Parent received message:', event.data);
+    });*/
+  </script>
+</body>
+</html>
