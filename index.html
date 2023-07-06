@@ -7,7 +7,7 @@
       margin: 0;
       padding: 0;
     }
-          #speech-button {
+      #speech-button {
       position: absolute;
       top: 15px;
       left: 15px;
@@ -36,24 +36,14 @@
     let voiceMessage = "";
 
     function speaking(){
-             const iframeWindow = iframe.contentWindow;
-            const customEvent = new MouseEvent('click', {
-              bubbles: true,
-              cancelable: true,
-              view: iframeWindow
-              });
-              iframeWindow.dispatchEvent(customEvent);
-
             var speech = true;
             window.SpeechRecognition = window.webkitSpeechRecognition;
-            console.log("the language is " + language);
             if(language == "french") recognition.lang = "fr-FR";
             else if(language == "english") recognition.lang = "en-US";
             else if(language == "arabic") recognition.lang = "ar-TN";
             recognition.interimResults = true;
-      recognition.addEventListener('result', speechResultHandler);
-      recognition.addEventListener('speechend', speechEndHandler);
-
+            recognition.addEventListener('result', speechResultHandler);
+            recognition.addEventListener('speechend', speechEndHandler);
       if (speech == true) {
         recognition.start();
       }
@@ -64,10 +54,8 @@
       .map(result => result[0])
       .map(result => result.transcript)
       .join('')
-
   }
   function speechEndHandler() {
-    console.log('Texte: ' + voiceMessage);
     if (voiceMessage != "") document.getElementById("speech-button").style.display = "none";
    
       recognition.stop(); // Stop the recognition process
@@ -81,6 +69,7 @@
       iframe.postMessage(message, 'http://localhost:3000/chatbotobjlolpokl'); // Replace with your React app's URL
     }
 
+
      window.addEventListener('message', function (event) {
       console.log("the language is: " + event.data); // Message received from parent
       language = event.data;
@@ -88,18 +77,6 @@
           document.getElementById("speech-button").style.display = "inline";
       }
     });
-
-
-    // Receive messages from the iframe
-    /*window.addEventListener('message', function(event) {
-      // Check the origin of the message
-      if (event.origin !== 'http://localhost:3000') { // Replace with your React app's URL
-        return;
-      }
-
-      // Handle the received message from the iframe
-      console.log('Parent received message:', event.data);
-    });*/
   </script>
 </body>
 </html>
