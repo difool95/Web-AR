@@ -4,8 +4,13 @@
   <title>My Web Page</title>
   <style>
     body {
-      margin: 0;
+        margin: 0;
       padding: 0;
+      height: 100vh;
+      overflow-y: scroll;
+      display: flex;
+      flex-direction: column;
+      background: orange;
     }
       #speech-button {
       position: absolute;
@@ -29,12 +34,59 @@
       color: #999999;
       cursor: not-allowed;
     }
+       .chatbot-container {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: transparent;
+      padding: 10px;
+      border-radius: 8px;
+      z-index: 9999;
+      transition: transform 0.3s ease-in-out;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+.chatbot-container:hover {
+      transform: translateY(-10px);
+    }
+
+     .content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      min-height: 500px; /* Adjust the height as needed */
+    }
+
+    .div1 {
+      background-color: lightblue;
+    }
+
+    .div2 {
+      background-color: lightgreen;
+    }
+
+    .div3 {
+      background-color: lightpink;
+    }
+
   </style>
 </head>
 <body>
-  <iframe id="myIframe" src="http://localhost:3000/chatbotobjlolpokl" height="500rem" width="700rem"></iframe>
-  <button id ="speech-button" onclick="speaking()" disabled>Speak</button>
+   <div class="content div1">
+    <h1>Div 1</h1>
+  </div>
 
+  <div class="content div2">
+    <h1>Div 2</h1>
+  </div>
+
+  <div class="content div3">
+    <h1>Div 3</h1>
+  </div>
+ <div class="chatbot-container">
+    <iframe id="myIframe" src="http://localhost:3000/chatbotobjlolpokl" height="350rem" width="350rem" style="border: none;"></iframe>
+    <button id ="speech-button" onclick="speaking()" disabled>Speak</button>
+  </div>
    <script>
     let recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
     let language = "";
