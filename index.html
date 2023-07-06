@@ -23,20 +23,26 @@
     #speech-button:hover {
       background-color: #cc0000;
     }
+
+    #speech-button:disabled {
+      background-color: gray;
+      color: #999999;
+      cursor: not-allowed;
+    }
   </style>
 </head>
 <body>
   <iframe id="myIframe" src="http://localhost:3000/chatbotobjlolpokl" height="500rem" width="700rem"></iframe>
-  <button id ="speech-button" onclick="speaking()">Speak</button>
+  <button id ="speech-button" onclick="speaking()" disabled>Speak</button>
 
    <script>
     let recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
-    let language = "french";
+    let language = "";
     const iframe = document.getElementById('myIframe').contentWindow;
     let voiceMessage = "";
-           sendMessageToIframeClickEvent();
     function speaking(){
-       var speech = true;
+      if(language != ""){
+         var speech = true;
        window.SpeechRecognition = window.webkitSpeechRecognition;
        if(language == "french") recognition.lang = "fr-FR";
        else if(language == "english") recognition.lang = "en-US";
@@ -47,6 +53,7 @@
       if (speech == true) {
         recognition.start();
       }
+      } 
     }
 
     function speechResultHandler(e) {
@@ -69,14 +76,10 @@
       iframe.postMessage(message, 'http://localhost:3000/chatbotobjlolpokl'); // Replace with your React app's URL
     }
 
-    function sendMessageToIframeClickEvent(){
-      iframe.postMessage("InvokeClick", 'http://localhost:3000/chatbotobjlolpokl');
-    }
-
-
      window.addEventListener('message', function (event) {
       console.log("the language is: " + event.data); // Message received from parent
       language = event.data;
+      document.getElementById("speech-button").disabled = false;
       if(event.data == "can speak") {
           document.getElementById("speech-button").style.display = "inline";
       }
