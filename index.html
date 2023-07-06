@@ -34,16 +34,16 @@
     let language = "french";
     const iframe = document.getElementById('myIframe').contentWindow;
     let voiceMessage = "";
-
+           sendMessageToIframeClickEvent();
     function speaking(){
-            var speech = true;
-            window.SpeechRecognition = window.webkitSpeechRecognition;
-            if(language == "french") recognition.lang = "fr-FR";
-            else if(language == "english") recognition.lang = "en-US";
-            else if(language == "arabic") recognition.lang = "ar-TN";
-            recognition.interimResults = true;
-            recognition.addEventListener('result', speechResultHandler);
-            recognition.addEventListener('speechend', speechEndHandler);
+       var speech = true;
+       window.SpeechRecognition = window.webkitSpeechRecognition;
+       if(language == "french") recognition.lang = "fr-FR";
+       else if(language == "english") recognition.lang = "en-US";
+       else if(language == "arabic") recognition.lang = "ar-TN";
+       recognition.interimResults = true;
+       recognition.addEventListener('result', speechResultHandler);
+       recognition.addEventListener('speechend', speechEndHandler);
       if (speech == true) {
         recognition.start();
       }
@@ -67,6 +67,10 @@
     function sendMessageToIframe() {
       const message = voiceMessage;
       iframe.postMessage(message, 'http://localhost:3000/chatbotobjlolpokl'); // Replace with your React app's URL
+    }
+
+    function sendMessageToIframeClickEvent(){
+      iframe.postMessage("InvokeClick", 'http://localhost:3000/chatbotobjlolpokl');
     }
 
 
