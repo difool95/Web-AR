@@ -89,6 +89,24 @@
         box.object3D.add(container);
         //container.rotation.set(new THREE.Vector3(1.6, 0, 0));
         container.rotateX(1.6);
+          // Attach the 'start-animations' component to the 'a-plane' element
+  document.querySelector('#box').setAttribute('start-animations', '');
+  AFRAME.registerComponent('start-animations', {
+    init: function () {
+      // Get all child elements of the a-plane element
+      const children = this.el.querySelectorAll('*');
+
+      // Loop through the child elements
+      children.forEach(child => {
+        // Check if the child has an animation component
+        if (child.components.animation) {
+          // Start the animation if it has one
+          child.components.animation.begin();
+        }
+      });
+    }
+  });
+
 
         //toggleFullscreen();
         // Check if VR is available
