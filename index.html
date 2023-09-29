@@ -89,6 +89,9 @@
         box.object3D.add(container);
         //container.rotation.set(new THREE.Vector3(1.6, 0, 0));
         container.rotateX(1.6);
+        // Get a reference to the container
+        const container = document.querySelector('#container');
+
         // Loop through all children of the container
         container.querySelectorAll('*').forEach(child => {
           // Check if the child has an animation component
