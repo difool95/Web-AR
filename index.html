@@ -87,11 +87,13 @@
         box.object3D.add(container);
         //container.rotation.set(new THREE.Vector3(1.6, 0, 0));
         container.rotateX(1.6);
-        console.log(container.children(0));
-        const animationComponent = container.children(0).getAttribute('animation');
+        console.log(container);
+        console.log(container.childrens(0));
+
+        const animationComponent = container.childrens(0).getAttribute('animation');
         if (animationComponent) {
           // Start the animation for this child
-          container.children(0).emit('animationstart');
+          container.childrens(0).emit('animationstart');
         }
         //toggleFullscreen();
         // Check if VR is available
