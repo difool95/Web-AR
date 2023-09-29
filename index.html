@@ -92,9 +92,8 @@
         console.log(children[1]);
         console.log(children[1].children[0]);
         // Check if the child has an animation function
-        if (children[1].children[0].startAnimation) {
-          children[1].children[0].startAnimation();
-        }
+        children[1].children[0].userData.animation.start();
+
         // Now you can work with the children as needed
         /*  for (let i = 0; i < children.length; i++) {
             console.log(child.getAttribute('animation'));
