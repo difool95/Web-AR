@@ -89,22 +89,21 @@
         container.rotateX(1.6);
         // Access the children of the cube object
         const children = box.object3D.children;
-        console.log(children);
-        console.log(children.length);
+        console.log(children[1]);
+        console.log(children[1].object3D.children);
 
         // Now you can work with the children as needed
-        for (let i = 0; i < children.length; i++) {
-          const child = children[i];
-          console.log(child.getAttribute('animation'));
-          // Do something with the child object
-        }
-
-
-        const animationComponent = container.object3D.children(0).getAttribute('animation');
-        if (animationComponent) {
-          // Start the animation for this child
-          container.object3D.children(0).emit('animationstart');
-        }
+        /*  for (let i = 0; i < children.length; i++) {
+            console.log(child.getAttribute('animation'));
+            // Do something with the child object
+          }
+  
+  
+          const animationComponent = container.object3D.children(0).getAttribute('animation');
+          if (animationComponent) {
+            // Start the animation for this child
+            container.object3D.children(0).emit('animationstart');
+          }*/
         //toggleFullscreen();
         // Check if VR is available
         /*  if (app.vrAvailable()) {
