@@ -95,13 +95,12 @@
     init: function () {
       // Get all child elements of the a-plane element
       const children = this.el.querySelectorAll('*');
-
       // Loop through the child elements
       children.forEach(child => {
         // Check if the child has an animation component
+        console.log(child);
         if (child.components.animation) {
           // Start the animation if it has one
-          console.log(child.components.animation);
           child.components.animation.begin();
         }
       });
