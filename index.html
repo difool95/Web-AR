@@ -95,7 +95,8 @@
         console.log(children[1].children[0].mixer);
 
         // Check if the child has an animation function
-        children[1].children[0].animations[0].play();
+        children[1].children[0].mixer.clipAction(children[1].children[0].animations[0]).play();
+
 
         // Now you can work with the children as needed
         /*  for (let i = 0; i < children.length; i++) {
